@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salon XL — Barbershop &amp; Beauty Salon, Lekki Phase I</title>
+<meta name="description" content="Salon XL — barbershop and beauty salon in Lekki Phase I, Lagos. 4.9 stars from 61 reviews. Book on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;700;800;900&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15120d;
+    --ink-soft:#1e1a13;
+    --ivory:#f1e8d8;
+    --ivory-dim:#e4d7bd;
+    --brass:#b08d57;
+    --brass-light:#d9bd8b;
+    --wine:#7a2331;
+    --wine-dark:#4f141d;
+    --stone:#9c9179;
+    --line-on-ink: rgba(241,232,216,0.16);
+    --line-on-ivory: rgba(21,18,13,0.14);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Libre Franklin', sans-serif;
+    font-weight:400;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  ::selection{ background:var(--brass); color:var(--ink); }
+
+  h1,h2,h3{
+    font-family:'Big Shoulders Display', sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    margin:0;
+  }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+  @media (max-width:640px){ .wrap{ padding:0 20px; } }
+
+  section{ position:relative; }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 28px;
+    font-family:'Libre Franklin', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    border-radius:2px;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-brass{ background:var(--brass); color:var(--ink); }
+  .btn-brass:hover{ background:var(--brass-light); }
+  .btn-line-ivory{ border-color:var(--line-on-ink); color:var(--ivory); }
+  .btn-line-ivory:hover{ border-color:var(--ivory); background:rgba(241,232,216,0.06); }
+  .btn-line-ink{ border-color:var(--line-on-ivory); color:var(--ink); }
+  .btn-line-ink:hover{ border-color:var(--ink); background:rgba(21,18,13,0.05); }
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:22px 0;
+    background:transparent;
+    transition:background .35s ease, padding .35s ease, border-color .35s ease;
+    border-bottom:1px solid transparent;
+  }
+  .nav.scrolled{
+    background:rgba(21,18,13,0.92);
+    backdrop-filter:blur(6px);
+    padding:14px 0;
+    border-bottom-color:var(--line-on-ink);
+  }
+  .nav .wrap{ display:flex; align-items:center; justify-content:space-between; }
+  .nav-logo{ font-family:'Big Shoulders Display'; font-weight:800; font-size:24px; color:var(--ivory); letter-spacing:0.02em; }
+  .nav-links{ display:flex; align-items:center; gap:34px; }
+  .nav-links a:not(.btn){ color:var(--ivory-dim); font-size:14px; font-weight:500; transition:color .2s ease; }
+  .nav-links a:not(.btn):hover{ color:var(--ivory); }
+  .nav .btn{ padding:11px 20px; font-size:13px; }
+  @media (max-width:760px){
+    .nav-links a:not(.btn){ display:none; }
+  }
+
+  /* ================= HERO ================= */
+  .hero{
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse 900px 500px at 78% 12%, rgba(176,141,87,0.14), transparent 60%),
+      var(--ink);
+    color:var(--ivory);
+    display:flex;
+    align-items:center;
+    padding:150px 0 90px;
+    overflow:hidden;
+  }
+  .hero .wrap{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:40px; align-items:center; }
+  @media (max-width:900px){ .hero .wrap{ grid-template-columns:1fr; } }
+
+  .hero-eyebrow-row{ display:flex; align-items:center; gap:14px; margin-bottom:22px; flex-wrap:wrap; }
+  .rating-chip{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:8px 14px; border:1px solid var(--line-on-ink); border-radius:100px;
+    font-size:13px; color:var(--ivory-dim);
+  }
+  .rating-chip strong{ color:var(--brass-light); font-weight:700; }
+  .status-chip{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:8px 14px; border:1px solid var(--line-on-ink); border-radius:100px;
+    font-size:13px; color:var(--ivory-dim);
+  }
+  .status-dot{ width:7px; height:7px; border-radius:50%; background:#7fae7a; box-shadow:0 0 0 3px rgba(127,174,122,0.2); }
+
+  .hero h1{
+    font-size:clamp(56px, 9vw, 108px);
+    line-height:0.86;
+    color:var(--ivory);
+  }
+  .hero h1 span{ display:block; color:var(--brass-light); }
+
+  .hero p.lede{
+    max-width:46ch;
+    margin-top:26px;
+    font-size:18px;
+    color:var(--ivory-dim);
+    font-weight:300;
+  }
+  .hero-ctas{ display:flex; gap:14px; margin-top:36px; flex-wrap:wrap; }
+  .hero-address{
+    margin-top:34px; font-size:14px; color:var(--stone);
+    border-top:1px solid var(--line-on-ink); padding-top:18px; max-width:40ch;
+  }
+
+  /* 3D Pole */
+  .pole-stage{
+    perspective:1400px;
+    display:flex; justify-content:center; align-items:center;
+    height:460px;
+  }
+  .pole-3d{
+    width:120px; height:400px;
+    position:relative;
+    transform-style:preserve-3d;
+    transform: rotateY(-18deg) rotateX(4deg);
+    transition:transform .1s linear;
+  }
+  .pole-cap{
+    position:absolute; left:0; right:0; height:38px; border-radius:60px/16px;
+    background:linear-gradient(180deg, var(--brass-light), var(--brass) 60%, #7a5f37);
+    box-shadow: inset 0 -4px 8px rgba(0,0,0,0.35);
+  }
+  .pole-cap.top{ top:-19px; }
+  .pole-cap.bottom{ bottom:-19px; }
+  .pole-body{
+    position:absolute; top:14px; bottom:14px; left:0; right:0;
+    border-radius:60px;
+    overflow:hidden;
+    background:
+      repeating-linear-gradient(35deg,
+        var(--ivory) 0 18px,
+        var(--wine) 18px 36px,
+        var(--ivory) 36px 54px,
+        var(--ink-soft) 54px 72px
+      );
+    background-size: 100% 200%;
+    animation: pole-spin 3.2s linear infinite;
+    box-shadow: inset 10px 0 30px rgba(0,0,0,0.45), inset -10px 0 30px rgba(0,0,0,0.45);
+    border:1px solid rgba(0,0,0,0.4);
+  }
+  @keyframes pole-spin{ from{ background-position:0 0; } to{ background-position:0 200%; } }
+  .pole-glow{
+    position:absolute; inset:-40px; z-index:-1;
+    background:radial-gradient(circle, rgba(176,141,87,0.18), transparent 70%);
+  }
+
+  /* ================= ABOUT ================= */
+  .about{ background:var(--ivory); padding:120px 0; }
+  .about .wrap{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px; }
+  @media (max-width:860px){ .about .wrap{ grid-template-columns:1fr; gap:40px; } }
+  .about h2{ font-size:clamp(38px,5vw,56px); line-height:0.92; color:var(--ink); }
+  .about-copy p{ font-size:17px; color:#403a2c; max-width:52ch; }
+  .about-copy p.lead{ font-size:20px; font-weight:300; color:var(--ink); }
+  .offer-list{ list-style:none; margin:28px 0 0; padding:0; border-top:1px solid var(--line-on-ivory); }
+  .offer-list li{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:18px 0; border-bottom:1px solid var(--line-on-ivory);
+    font-size:15px; color:#403a2c;
+  }
+  .offer-list li b{ font-family:'Big Shoulders Display'; font-weight:700; font-size:18px; color:var(--ink); text-transform:uppercase; }
+
+  /* ================= SERVICES (3D scroll) ================= */
+  .services{ background:var(--ink); color:var(--ivory); padding:130px 0 150px; }
+  .services-head{ max-width:640px; margin-bottom:64px; }
+  .services-head h2{ font-size:clamp(38px,5vw,56px); color:var(--ivory); }
+  .services-head p{ color:var(--ivory-dim); font-size:17px; margin-top:16px; font-weight:300; max-width:50ch; }
+
+  .stage3d{ perspective:1600px; }
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  @media (max-width:900px){ .card-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px){ .card-grid{ grid-template-columns:1fr; } }
+
+  .svc-card{
+    background:var(--ink-soft);
+    border:1px solid var(--line-on-ink);
+    padding:32px 26px;
+    transform-style:preserve-3d;
+    transform: perspective(1000px) rotateY(-62deg) translateZ(-160px) translateX(-40px);
+    opacity:0;
+    transition: transform 0.9s cubic-bezier(.16,.84,.44,1), opacity 0.9s ease;
+    will-change:transform, opacity;
+  }
+  .svc-card.in-view{
+    transform: perspective(1000px) rotateY(0deg) translateZ(0) translateX(0);
+    opacity:1;
+  }
+  .svc-card:nth-child(3n+2){ transition-delay:0.08s; }
+  .svc-card:nth-child(3n+3){ transition-delay:0.16s; }
+
+  .svc-num{ font-family:'Big Shoulders Display'; font-size:14px; color:var(--brass-light); letter-spacing:0.08em; }
+  .svc-card h3{ font-size:28px; color:var(--ivory); margin-top:10px; }
+  .svc-card p{ color:var(--ivory-dim); font-size:14.5px; margin-top:12px; font-weight:300; }
+
+  /* ================= GALLERY (3D tilt) ================= */
+  .gallery{ background:var(--ivory); padding:130px 0; }
+  .gallery-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:56px; flex-wrap:wrap; }
+  .gallery-head h2{ font-size:clamp(38px,5vw,56px); color:var(--ink); }
+  .gallery-head p{ max-width:36ch; color:#403a2c; font-size:15px; }
+
+  .gal-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:22px;
+    perspective:1200px;
+  }
+  @media (max-width:860px){ .gal-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .gal-grid{ grid-template-columns:1fr; } }
+
+  .gal-tile{
+    aspect-ratio:4/5;
+    position:relative;
+    border-radius:2px;
+    overflow:hidden;
+    transform-style:preserve-3d;
+    transition:transform 0.25s ease-out, box-shadow .25s ease;
+    box-shadow:0 14px 30px -18px rgba(21,18,13,0.4);
+  }
+  .gal-tile:hover{ box-shadow:0 24px 40px -14px rgba(21,18,13,0.5); }
+  .gal-tile .tex{ position:absolute; inset:0; }
+  .gal-tile .tag{
+    position:absolute; left:16px; bottom:16px;
+    color:var(--ivory);
+    font-family:'Big Shoulders Display'; font-weight:700; text-transform:uppercase;
+    font-size:19px; letter-spacing:0.01em;
+    transform:translateZ(30px);
+  }
+  .gal-tile::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.55));
+  }
+  .t1 .tex{ background:linear-gradient(150deg, #7a2331, #4f141d 70%); }
+  .t2 .tex{ background:linear-gradient(150deg, #b08d57, #6d5230 75%); }
+  .t3 .tex{ background:linear-gradient(150deg, #2c2a24, #15120d 75%); }
+  .t4 .tex{ background:linear-gradient(150deg, #8c6a3f, #7a2331 80%); }
+  .t5 .tex{ background:linear-gradient(150deg, #3a3629, #b08d57 120%); }
+  .t6 .tex{ background:linear-gradient(150deg, #591824, #b08d57 130%); }
+
+  /* ================= REVIEWS ================= */
+  .reviews{ background:var(--ink); color:var(--ivory); padding:120px 0; }
+  .reviews .wrap{ display:grid; grid-template-columns:0.7fr 1.3fr; gap:60px; align-items:center; }
+  @media (max-width:860px){ .reviews .wrap{ grid-template-columns:1fr; gap:44px; } }
+  .rev-score{ display:flex; flex-direction:column; gap:10px; }
+  .rev-score .big{ font-family:'Big Shoulders Display'; font-size:120px; line-height:0.8; color:var(--brass-light); }
+  .stars{ display:flex; gap:5px; }
+  .stars svg{ width:20px; height:20px; fill:var(--brass-light); }
+  .rev-score .count{ color:var(--ivory-dim); font-size:14px; }
+
+  .tag-cloud{ display:flex; flex-wrap:wrap; gap:12px; }
+  .tag-cloud span{
+    padding:11px 18px; border:1px solid var(--line-on-ink); border-radius:100px;
+    font-size:14px; color:var(--ivory-dim);
+  }
+
+  /* ================= VISIT / CONTACT ================= */
+  .visit{ background:var(--ivory); padding:130px 0 100px; }
+  .visit .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:60px; }
+  @media (max-width:860px){ .visit .wrap{ grid-template-columns:1fr; gap:44px; } }
+  .visit h2{ font-size:clamp(38px,5vw,56px); color:var(--ink); margin-bottom:30px; }
+
+  .info-row{ display:flex; gap:18px; padding:20px 0; border-bottom:1px solid var(--line-on-ivory); }
+  .info-row .k{ width:110px; flex-shrink:0; font-size:13px; color:var(--stone); text-transform:uppercase; letter-spacing:0.06em; padding-top:2px;}
+  .info-row .v{ font-size:16px; color:var(--ink); }
+  .info-row .v a{ border-bottom:1px solid var(--line-on-ivory); }
+  .info-row .v a:hover{ border-color:var(--ink); }
+
+  .book-panel{
+    background:var(--ink); color:var(--ivory);
+    padding:44px 38px;
+    display:flex; flex-direction:column; justify-content:center;
+    position:relative; overflow:hidden;
+  }
+  .book-panel::before{
+    content:''; position:absolute; top:-60px; right:-60px; width:220px; height:220px;
+    background:radial-gradient(circle, rgba(176,141,87,0.22), transparent 70%);
+  }
+  .book-panel h3{ font-size:32px; color:var(--ivory); }
+  .book-panel p{ color:var(--ivory-dim); font-size:15px; margin:14px 0 26px; font-weight:300; max-width:34ch; }
+
+  /* ================= FOOTER ================= */
+  footer{ background:var(--ink); color:var(--stone); padding:36px 0; border-top:1px solid var(--line-on-ink); }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; font-size:13px; }
+  footer a:hover{ color:var(--ivory); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+    .svc-card{ transform:none !important; opacity:1 !important; }
+    .pole-3d{ transform:rotateY(-18deg) !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <div class="nav-logo">Salon XL</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+      <a href="https://wa.me/2349022222208" class="btn btn-brass" target="_blank" rel="noopener">Book on WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="hero-eyebrow-row">
+        <span class="rating-chip"><strong>4.9</strong> · 61 reviews</span>
+        <span class="status-chip"><span class="status-dot"></span> Open now · Closes 8 pm</span>
+      </div>
+      <h1>Salon<span>XL</span></h1>
+      <p class="lede">Precision fades, clean shaves, and finished beauty looks, under one roof in Lekki Phase&nbsp;I. Barbershop craft on one side of the room, salon polish on the other.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/2349022222208" class="btn btn-brass" target="_blank" rel="noopener">Book on WhatsApp</a>
+        <a href="tel:+2349022222208" class="btn btn-line-ivory">Call 0902 222 2208</a>
+      </div>
+      <div class="hero-address">12b Hunponu-Wusu Rd, Lekki Phase I, Lekki 106104, Lagos — Plus code CFPC+GP</div>
+    </div>
+    <div class="pole-stage">
+      <div class="pole-3d" id="pole">
+        <div class="pole-glow"></div>
+        <div class="pole-cap top"></div>
+        <div class="pole-body"></div>
+        <div class="pole-cap bottom"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>Two chairs.<br>One standard.</h2>
+    <div class="about-copy">
+      <p class="lead">Salon XL runs a barbershop and a beauty salon side by side, so a cut, a colour, and a manicure can all happen on the same visit without a second booking.</p>
+      <p>The team works from client reference and honest conversation before any clipper or brush touches you — every finish is planned, not guessed at.</p>
+      <ul class="offer-list">
+        <li><b>Barbershop</b><span>Fades, tapers, line-ups, beard &amp; shave</span></li>
+        <li><b>Hair</b><span>Braids, weaves, colour, treatments</span></li>
+        <li><b>Beauty</b><span>Manicure, pedicure, facials, makeup</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES (3D reveal on scroll) -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services-head">
+      <h2>What we do</h2>
+      <p>Exact pricing depends on length, style, and product used — send a photo on WhatsApp and the team will confirm before you sit down.</p>
+    </div>
+    <div class="stage3d">
+      <div class="card-grid">
+        <div class="svc-card"><div class="svc-num">01</div><h3>Cuts &amp; Fades</h3><p>Skin fades, tapers, and line-ups, finished with a straight-razor edge.</p></div>
+        <div class="svc-card"><div class="svc-num">02</div><h3>Beard &amp; Shave</h3><p>Hot towel shaves and beard shaping, sculpted to your face.</p></div>
+        <div class="svc-card"><div class="svc-num">03</div><h3>Braids &amp; Locs</h3><p>Cornrows, box braids, and loc maintenance, done at a comfortable pace.</p></div>
+        <div class="svc-card"><div class="svc-num">04</div><h3>Colour &amp; Treatments</h3><p>Colour, gloss, and deep-conditioning treatments for hair that's been through a lot.</p></div>
+        <div class="svc-card"><div class="svc-num">05</div><h3>Nails</h3><p>Manicures and pedicures, gel or classic polish.</p></div>
+        <div class="svc-card"><div class="svc-num">06</div><h3>Facials &amp; Skin</h3><p>Cleansing facials and skin prep before an event or just because.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY (3D tilt) -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="gallery-head">
+      <h2>Inside the salon</h2>
+      <p>A look at the space — tilt your cursor across a tile to see it move.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-tile t1"><div class="tex"></div><span class="tag">The Chair</span></div>
+      <div class="gal-tile t2"><div class="tex"></div><span class="tag">Fresh Fade</span></div>
+      <div class="gal-tile t3"><div class="tex"></div><span class="tag">Wash Bar</span></div>
+      <div class="gal-tile t4"><div class="tex"></div><span class="tag">Colour Bar</span></div>
+      <div class="gal-tile t5"><div class="tex"></div><span class="tag">Nail Station</span></div>
+      <div class="gal-tile t6"><div class="tex"></div><span class="tag">Finishing Touches</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="rev-score">
+      <div class="big">4.9</div>
+      <div class="stars">
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 15l-5.6 3 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 15l-5.6 3 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 15l-5.6 3 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 15l-5.6 3 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+        <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 15l-5.6 3 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+      </div>
+      <div class="count">from 61 Google reviews</div>
+    </div>
+    <div>
+      <h2 style="color:var(--ivory); font-size:clamp(28px,4vw,38px); margin-bottom:22px;">What guests mention most</h2>
+      <div class="tag-cloud">
+        <span>Clean fades</span>
+        <span>Friendly team</span>
+        <span>Spotless space</span>
+        <span>Worth the wait</span>
+        <span>Skilled colourists</span>
+        <span>Relaxing visit</span>
+        <span>Good with kids' cuts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Visit us</h2>
+      <div class="info-row"><div class="k">Address</div><div class="v">12b Hunponu-Wusu Rd, Lekki Phase I, Lekki 106104, Lagos</div></div>
+      <div class="info-row"><div class="k">Hours</div><div class="v">Open today · Closes 8 pm<br><span style="color:var(--stone); font-size:13.5px;">Confirm the full weekly schedule on WhatsApp</span></div></div>
+      <div class="info-row"><div class="k">Phone</div><div class="v"><a href="tel:+2349022222208">0902 222 2208</a></div></div>
+      <div class="info-row"><div class="k">Plus code</div><div class="v">CFPC+GP Lekki</div></div>
+      <div class="info-row"><div class="k">Map</div><div class="v"><a href="https://www.google.com/maps/search/?api=1&query=Salon+XL+12b+Hunponu-Wusu+Rd+Lekki+Phase+I+Lekki+106104+Lagos" target="_blank" rel="noopener">Open in Google Maps</a></div></div>
+    </div>
+    <div class="book-panel">
+      <h3>Ready for your appointment?</h3>
+      <p>Send your preferred day, time, and what you're after. The team replies fast on WhatsApp.</p>
+      <a href="https://wa.me/2349022222208" class="btn btn-brass" target="_blank" rel="noopener">Message Salon XL</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Salon XL — Barbershop &amp; Beauty Salon, Lekki Phase I</span>
+    <span><a href="tel:+2349022222208">0902 222 2208</a> · <a href="https://wa.me/2349022222208" target="_blank" rel="noopener">WhatsApp</a></span>
+  </div>
+</footer>
+
+<script>
+  // Nav background on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Hero pole: subtle 3D rotation tied to scroll position
+  const pole = document.getElementById('pole');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (pole && !prefersReduced) {
+    window.addEventListener('scroll', () => {
+      const y = Math.min(window.scrollY, 800);
+      const ry = -18 + (y / 800) * 34;   // -18deg to +16deg
+      const rx = 4 - (y / 800) * 8;
+      pole.style.transform = `rotateY(${ry}deg) rotateX(${rx}deg)`;
+    }, { passive: true });
+  }
+
+  // Service cards: 3D reveal on scroll into view
+  const cards = document.querySelectorAll('.svc-card');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(c => io.observe(c));
+
+  // Gallery tiles: pointer-based 3D tilt
+  const tiles = document.querySelectorAll('.gal-tile');
+  tiles.forEach(tile => {
+    tile.addEventListener('pointermove', (e) => {
+      if (prefersReduced) return;
+      const r = tile.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      tile.style.transform = `rotateY(${px * 16}deg) rotateX(${-py * 16}deg) scale(1.02)`;
+    });
+    tile.addEventListener('pointerleave', () => {
+      tile.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+    });
+  });
+</script>
+
+</body>
+</html>
